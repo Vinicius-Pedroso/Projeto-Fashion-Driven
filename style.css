@@ -42,14 +42,20 @@ body {
 .telaesquerda div div{
     height: 100px;
     width: 100px;
-    border: solid;
-    border-radius: 100%;
-    border-width: 0.5px;
-    border-color: #C4C4C4;
     display: flex;
     justify-content: center;
     align-items: center;
 
+}
+.bordapadrao {
+    border: solid;
+    border-radius: 100%;
+    border-width: 0.5px;
+    border-color: #C4C4C4;
+}
+.selecionado{
+    border-width: 3px;
+    border-color: #404EED;
 }
 .inputlink {
     margin-top: 5px;
@@ -81,6 +87,10 @@ body {
     background-color: #404EED;
     display: flex;
     justify-content: center;
+}
+.teladireita img {
+    max-width: auto;
+    max-height: auto;
 }
 .bottom {
     margin-top: 50px;
