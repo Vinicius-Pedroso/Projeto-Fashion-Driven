@@ -103,10 +103,23 @@ body {
     max-width: auto;
     max-height: auto;
 }
-.bottom {
+.bottom1 {
     margin-top: 50px;
     width: auto;
-    height: 342px;
+    height: 292px;
+}
+.bottom1 img {
+    max-width: 180px;
+    max-height: 180px;
+}
+.bottom2 {
+    margin-top: 50px;
+    width: auto;
+    height: 262px;
+}
+.bottom2 img {
+    max-width: 180px;
+    max-height: 180px;
 }
 h1 {
     padding-left: 80px;

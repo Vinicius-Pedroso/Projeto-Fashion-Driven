@@ -17,13 +17,13 @@
             <div class="telaesquerda">
                 <p>Escolha o modelo</p>
                 <div>
-                    <div class="bordapadrao" onclick='selection1(this, 1);'>
+                    <div class="bordapadrao" onclick='selection1(this, "t-shirt");'>
                         <img src="/img/tshirt.png">
                     </div>
-                    <div class="bordapadrao" onclick='selection1(this, 2);'>
+                    <div class="bordapadrao" onclick='selection1(this, "long");'>
                         <img src="/img/Camiseta.png">
                     </div>
-                    <div class="bordapadrao" onclick='selection1(this, 3);'>
+                    <div class="bordapadrao" onclick='selection1(this, "top-tank");'>
                         <img src="/img/Mangalonga.png">
                     </div>
                 </div>
@@ -34,13 +34,13 @@
                 </div>
                 <p>Escolha a gola</p>
                 <div>
-                    <div class="bordapadrao" onclick='selection2(this, 1);'>
+                    <div class="bordapadrao" onclick='selection2(this, "v-neck");'>
                         <img src="/img/GolaV.png">
                     </div>
-                    <div class="bordapadrao" onclick='selection2(this, 2);'>
+                    <div class="bordapadrao" onclick='selection2(this, "round");'>
                         <img src="/img/GolaRedonda.png">
                     </div>
-                    <div class="bordapadrao" onclick='selection2(this, 3);'>
+                    <div class="bordapadrao" onclick='selection2(this, "polo");'>
                         <img src="/img/GolaPolo.png">
                     </div>
                 </div>
@@ -51,15 +51,15 @@
                 </div>
                 <p>Escolha o tecido</p>
                 <div>
-                    <div class="bordapadrao" onclick='selection3(this, 1);'>
+                    <div class="bordapadrao" onclick='selection3(this, "silk");'>
                         <img src="/img/Seda.png">
                     </div>
-                    <div class="bordapadrao" onclick='selection3(this, 2);'>
+                    <div class="bordapadrao" onclick='selection3(this, "cotton");'>
                         <img src="/img/Algodão.png">
                     </div>
-                    <div>
-                        <img src="/img/Poliester.png" onclick='selection3(this, 3);'>
-                    </div class="bordapadrao">
+                    <div class="bordapadrao" onclick='selection3(this, "polyester");'>
+                        <img src="/img/Poliester.png">
+                    </div>
                 </div>
                 <div style="margin-left: 25px; height: 20px;">
                     <p>Seda</p>
@@ -67,7 +67,7 @@
                     <p>Poliester</p>
                 </div>
                 <p>Imagem de referência</p>
-                <input type="text" placeholder="Insira o link" class="inputlink"></input>
+                <input type="text" name="image" placeholder="Insira o link" class="inputlink"></input>
             </div>
             <div class="botaopedido" onclick='makedeal();'>
                 <p>Confirmar pedido</p>
@@ -77,31 +77,11 @@
             <img src="img/ilustração.png">
         </div>
     </div>
-    <div class="bottom">
-        <h1>Ultimos pedidos</h1>
-        <div class="pedidos">
-            <div>
-                <img src="/img/Blusa1.png">
-                <p>Bom dia</p>
-            </div>
-            <div>
-                <img src="/img/Blusa1.png">
-                <p>Bom dia</p>
-            </div>
-            <div>
-                <img src="/img/Blusa1.png">
-                <p>Bom dia</p>
-            </div>
-            <div>
-                <img src="/img/Blusa1.png">
-                <p>Bom dia</p>
-            </div>
-            <div>
-                <img src="/img/Blusa1.png">
-                <p>Bom dia</p>
-            </div>
-        </div>
+    <div class="bottom1">
     </div>
+    <div class="bottom2">
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="/script.js"></script>
 </body>
 </html>
