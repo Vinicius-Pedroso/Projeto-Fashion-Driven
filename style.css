@@ -77,8 +77,19 @@ body {
     background-color: #C4C4C4;
     color: white;
 }
+.buttonready {
+    background-color: #404EED;
+}
 
-.selecionado {
+.selecionado1 {
+    border-color: #404EED;
+    border-width: 3px;
+}
+.selecionado2 {
+    border-color: #404EED;
+    border-width: 3px;
+}
+.selecionado3 {
     border-color: #404EED;
     border-width: 3px;
 }
