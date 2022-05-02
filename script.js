@@ -5,70 +5,72 @@ let opcao3 = false;
 let camisa = "";
 let gola = "";
 let tecido = "";
+let actualoffer = [];
 receivedata();
 
 function receivedata (){
     const clothes = axios.get('https://mock-api.driven.com.br/api/v4/shirts-api/shirts');
     clothes.then(imprimirbottom);
-    clothes.catch(function(){alert("entrou no catch")});
+    clothes.catch(function(){});
 }
 function imprimirbottom (clothes){
-    alert("entrou no then");
-    console.log(clothes)
+    actualoffer = clothes;
     imprimirbottom1(clothes);
     imprimirbottom2(clothes);
 }
 function imprimirbottom1(clothes){
     const linha1 = document.querySelector(".bottom1");
+    linha1.innerHTML = ""
     linha1.innerHTML = `
         <h1>Ultimos pedidos</h1>
         <div class="pedidos">
-            <div>
+            <div onclick='buyrecent(0);'>
                 <img src="${clothes.data[0].image}">
-                <p>Bom dia</p>
+                <p>Criador: ${clothes.data[0].owner}</p>
             </div>
-            <div>
+            <div onclick='buyrecent(1);'>
                 <img src="${clothes.data[1].image}">
-                <p>Bom dia</p>
+                <p>Criador: ${clothes.data[1].owner}</p>
             </div>
-            <div>
+            <div onclick='buyrecent(2);'>
                 <img src="${clothes.data[2].image}">
-                <p>Bom dia</p>
+                <p>Criador: ${clothes.data[2].owner}</p>
             </div>
-            <div>
+            <div onclick='buyrecent(3);'>
                 <img src="${clothes.data[3].image}">
-                <p>Bom dia</p>
+                <p>Criador: ${clothes.data[3].owner}</p>
             </div>
-            <div>
+            <div onclick='buyrecent(4);'>
                 <img src="${clothes.data[4].image}">
-                <p>Bom dia</p>
+                <p>Criador: ${clothes.data[4].owner}</p>
             </div>
         </div>
     `
 }
 function imprimirbottom2 (clothes){
     const linha2 = document.querySelector(".bottom2");
+    linha2.innerHTML = ""
     linha2.innerHTML += `
         <div class="pedidos">
-            <div>
+            <div onclick='buyrecent(5);'>
                 <img src="${clothes.data[5].image}">
-                <p>Bom dia</p>
+                <p>Criador: ${clothes.data[5].owner}</p>
             </div>
-            <div>
+            <div onclick='buyrecent(6);'>
                 <img src="${clothes.data[6].image}">
-                <p>Bom dia</p>
+                <p>Criador: ${clothes.data[6].owner}</p>
             </div>
-            <div>
+            <div onclick='buyrecent(7);'>
                 <img src="${clothes.data[7].image}">
-                <p>Bom dia</p>
+                <p>Criador: ${clothes.data[7].owner}</p>
             </div>
-            <div>
+            <div onclick='buyrecent(8);'>
                 <img src="${clothes.data[8].image}">
-                <p>Bom dia</p>
+                <p>Criador: ${clothes.data[8].owner}</p>
             </div>
-            <div>
+            <div onclick='buyrecent(9);'>
                 <img src="${clothes.data[9].image}">
-                <p>Bom dia</p>
+                <p>Criador: ${clothes.data[9].owner}</p>
             </div>
         </div>
     `
@@ -125,23 +127,54 @@ function activatebutton (){
     }
 }
 function makedeal (){
-    let image = document.querySelector('input[name="image"]').value
-    if (checkURL(image) == false){
+    let http = document.querySelector('input[name="image"]').value
+    if (checkURL(http) == false){
         alert("Imagem de reverência inválida");
     }else {
         if(opcao1 == true && opcao2 ==true && opcao3 == true){
             alert("Sua encomenda foi enviada");
-            informserver();
+            informserver(http);
         }
     }
 }
-function informserver(){
-
-
-
-
-
-
+function informserver(http){
+    let modelready = {
+        "model": camisa,
+        "neck": gola,
+        "material": tecido,
+        "image": http,
+        "owner": name,
+        "author": name
+    }
+    enviar = axios.post(
+        "https://mock-api.driven.com.br/api/v4/shirts-api/shirts", modelready
+    )
+    enviar.then(alert("Sua encomenda foi confirmada com sucesso"))
+    enviar.catch(function (){alert("Ops, não conseguimos processar sua encomenda")});
+    receivedata();
+}
+function buyrecent (num){
+    let yes = confirm(offerdata(num));
+    if (yes == true){
+        modelready = {
+            "model": actualoffer.data[num].model,
+            "neck": actualoffer.data[num].neck,
+            "material": actualoffer.data[num].material,
+            "image": actualoffer.data[num].image,
+            "owner": actualoffer.data[num].owner,
+            "author": actualoffer.data[num].owner
+        }
+        enviar = axios.post(
+            "https://mock-api.driven.com.br/api/v4/shirts-api/shirts", modelready
+        )
+        enviar.then(alert("Sua encomenda foi confirmada com sucesso"))
+        enviar.catch(function (){alert("Ops, não conseguimos processar sua encomenda")});
+        receivedata();
+    }
+}
+function offerdata (num){
+    let string = "Você deseja comprar uma peça de roupa com modelo "+actualoffer.data[num].model +", gola "+actualoffer.data[num].neck +", feito de: "+actualoffer.data[num].material +". Deseja confirmar o pedido?";
+    return string;
 }
 function checkURL(url) {
     return(url.match(/\.(jpeg|jpg|gif|png)$/) != null);
