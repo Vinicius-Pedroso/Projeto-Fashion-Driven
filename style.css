@@ -125,6 +125,14 @@ h1 {
     padding-left: 80px;
     font-size: 24px;
 }
+h2 {
+    margin-left: 10px;
+    font-size: 20px;
+    font-weight: 700;
+}
+.criador {
+    display: flex;
+}
 .pedidos{
     margin-top: 40px;
     display: flex;
@@ -132,31 +140,6 @@ h1 {
     align-items: center;
 }
 .pedidos p {
-    margin-left: 40px;
+    margin-left: 5px;
+    font-size: 20px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

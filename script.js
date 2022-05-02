@@ -26,23 +26,38 @@ function imprimirbottom1(clothes){
         <div class="pedidos">
             <div onclick='buyrecent(0);'>
                 <img src="${clothes.data[0].image}">
-                <p>Criador: ${clothes.data[0].owner}</p>
+                <span class="criador">
+                    <h2>Criador</h2>
+                    <p>: ${clothes.data[0].owner}</p>
+                </span>
             </div>
             <div onclick='buyrecent(1);'>
                 <img src="${clothes.data[1].image}">
-                <p>Criador: ${clothes.data[1].owner}</p>
+                <span class="criador">
+                    <h2>Criador</h2>
+                    <p>: ${clothes.data[1].owner}</p>
+                </span>
             </div>
             <div onclick='buyrecent(2);'>
                 <img src="${clothes.data[2].image}">
-                <p>Criador: ${clothes.data[2].owner}</p>
+                <span class="criador">
+                    <h2>Criador</h2>
+                    <p>: ${clothes.data[2].owner}</p>
+                </span>
             </div>
             <div onclick='buyrecent(3);'>
                 <img src="${clothes.data[3].image}">
-                <p>Criador: ${clothes.data[3].owner}</p>
+                <span class="criador">
+                    <h2>Criador</h2>
+                    <p>: ${clothes.data[3].owner}</p>
+                </span>
             </div>
             <div onclick='buyrecent(4);'>
                 <img src="${clothes.data[4].image}">
-                <p>Criador: ${clothes.data[4].owner}</p>
+                <span class="criador">
+                    <h2>Criador</h2>
+                    <p>: ${clothes.data[4].owner}</p>
+                </span>
             </div>
         </div>
     `
@@ -54,23 +69,38 @@ function imprimirbottom2 (clothes){
         <div class="pedidos">
             <div onclick='buyrecent(5);'>
                 <img src="${clothes.data[5].image}">
-                <p>Criador: ${clothes.data[5].owner}</p>
+                <span class="criador">
+                    <h2>Criador</h2>
+                    <p>: ${clothes.data[5].owner}</p>
+                </span>
             </div>
             <div onclick='buyrecent(6);'>
                 <img src="${clothes.data[6].image}">
-                <p>Criador: ${clothes.data[6].owner}</p>
+                <span class="criador">
+                    <h2>Criador</h2>
+                    <p>: ${clothes.data[6].owner}</p>
+                </span>
             </div>
             <div onclick='buyrecent(7);'>
                 <img src="${clothes.data[7].image}">
-                <p>Criador: ${clothes.data[7].owner}</p>
+                <span class="criador">
+                    <h2>Criador</h2>
+                    <p>: ${clothes.data[7].owner}</p>
+                </span>
             </div>
             <div onclick='buyrecent(8);'>
                 <img src="${clothes.data[8].image}">
-                <p>Criador: ${clothes.data[8].owner}</p>
+                <span class="criador">
+                    <h2>Criador</h2>
+                    <p>: ${clothes.data[8].owner}</p>
+                </span>
             </div>
             <div onclick='buyrecent(9);'>
                 <img src="${clothes.data[9].image}">
-                <p>Criador: ${clothes.data[9].owner}</p>
+                <span class="criador">
+                    <h2>Criador</h2>
+                    <p>: ${clothes.data[9].owner}</p>
+                </span>
             </div>
         </div>
     `
